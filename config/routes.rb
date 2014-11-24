@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   get 'sessions/create'
 
   get 'users/new'
+
   get 'users/create'
+
+  resources :sessions, only: [:new, :create, :destroy]
+  
   resources :sessions, only: [:new, :create]
 
   # get 'movies/index'
