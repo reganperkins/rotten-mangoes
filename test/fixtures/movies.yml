@@ -4,10 +4,14 @@ one:
   title: MyString
   director: MyString
   runtime_in_minutes: 1
-  descrip: MyString
+  description: MyText
+  poster_image_url: MyString
+  release_date: 2014-11-25 18:51:00
 
 two:
   title: MyString
   director: MyString
   runtime_in_minutes: 1
-  descrip: MyString
+  description: MyText
+  poster_image_url: MyString
+  release_date: 2014-11-25 18:51:00

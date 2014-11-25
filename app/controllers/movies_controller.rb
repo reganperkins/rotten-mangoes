@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   def index
-    @movies = Movies.all
+    @movies = Movie.all
   end
 
   def show
@@ -8,7 +8,7 @@ class MoviesController < ApplicationController
   end
 
   def new
-    @movies = Movie.new
+    @movie = Movie.new
   end
 
   def edit
@@ -39,6 +39,10 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
     @movie.destroy
     redirect_to movies_path
+  end
+
+  def review_average
+    reviews.sum(:rating_out_of_ten)/reviews.size
   end
 
   protected
