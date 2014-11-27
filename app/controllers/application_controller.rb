@@ -5,6 +5,12 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  helper_method :current_user
+
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
   def restrict_access
     if !current_user
       flash[:alert] = "You must log in."
@@ -12,10 +18,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  def confirm_admin
+    if !(current_user && current_user.role == 'admin')
+      flash[:notice] = "You you do not have access to the page you requested"
+      redirect_to movies_path
+    end
   end
 
-  helper_method :current_user
-  
 end

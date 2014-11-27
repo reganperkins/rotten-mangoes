@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_many :reviews
+
+  enum role: { user: 0, admin: 1 }
   
   has_secure_password
   
@@ -11,4 +13,7 @@ class User < ActiveRecord::Base
     "#{firstname} #{lastname}"
   end
 
+  # def is_admin
+  #   firstname == 'Regan'
+  # end
 end
