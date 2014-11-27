@@ -1,1 +1,8 @@
-hello admin user list
+<h2> Users </h2>
+
+<% @users.each do |user| %>
+  <li><%=  user %></li> 
+<% end %>
+
+<%= paginate @users %>
+
