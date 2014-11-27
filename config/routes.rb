@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :users, only: [:index, :destroy]   #[:new, :create, :destroy]
+    resources :users, only: [:index, :destroy, :edit, :update]   #[:new, :create, :destroy]
   end
 
   resources :users, only: [:new, :create, :destroy]
