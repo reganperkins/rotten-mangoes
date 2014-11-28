@@ -5,7 +5,7 @@ class Movie < ActiveRecord::Base
 
   validates :title, :director, :description, :release_date, :poster, presence: true
   validates :runtime_in_minutes, numericality: { only_integer: true }
-  validate :release_date_is_in_the_future
+  # validate :release_date_is_in_the_future
 
   scope :includes_title, -> (title) { where("title like ?", title) }
   scope :includes_director, -> (director) { where("director like ?", director) }
@@ -26,7 +26,7 @@ class Movie < ActiveRecord::Base
     when "1"
      then where("runtime_in_minutes <= ?", 90)
     when "2"
-      then where("runtime_in_minutes ? and ?", 90, 120)
+      then where("runtime_in_minutes between ? and ?", 91, 119)
     when "3"
       then where("runtime_in_minutes >= ?", 120)
     end
@@ -39,12 +39,12 @@ class Movie < ActiveRecord::Base
     0.0
   end
 
-  protected
+  # protected
 
-  def release_date_is_in_the_future
-    if release_date.present?
-      errors.add(:release_date, "should probably be in the future") if release_date < Date.today
-    end
-  end
+  # def release_date_is_in_the_future
+  #   if release_date.present?
+  #     errors.add(:release_date, "should probably be in the future") if release_date < Date.today
+  #   end
+  # end
 end
 
