@@ -10,6 +10,7 @@ class Movie < ActiveRecord::Base
   scope :includes_title, -> (title) { where("title like ?", title) }
   scope :includes_director, -> (director) { where("director like ?", director) }
 
+  # def self.search_results(params) 
   scope :search_results, -> (params) do 
     if params[:title].present?
       @movies = Movie.includes_title(params[:title])
@@ -19,17 +20,7 @@ class Movie < ActiveRecord::Base
     end
   end
 
-  # scope :duration -> (params) do
-  #   case 
-  #   when params[:duration] = 1
-  #    then @movies = Movie.includes_title(params[:duration])
-  #   when params[:duration] = 2
-  #     then @movies = Movie.includes_title(params[:title])
-  #   when parama[:duration] = 3
-  #     then @movies = Movie.includes_title(params[:title])
-  #   end
-  # end
-
+  # def self.search_duration(params) 
   scope :search_duration, -> (params) do
     case params[:duration]
     when "1"
