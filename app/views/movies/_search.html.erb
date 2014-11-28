@@ -5,8 +5,9 @@
   <%= label_tag :director, "Search by director:" %>
   <%= text_field_tag :director %>
 
-  <%= label_tag :duration, "Search by movie length:" %>
-  <%= text_field_tag :duration %>
+
+  <%= label_tag(:duration, "Search by movie length:") %>
+  <%= select_tag( :duration, options_for_select([ ['' , ], ['Under 90 minutes', 1], ['Between 90 and 120 minutes', 2], ["Over 120 minutes", 3] ])) %>
  
 
 

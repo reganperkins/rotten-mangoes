@@ -35,6 +35,10 @@ gem 'foundation-rails'
 # Use unicorn as the app server
 # gem 'unicorn'
 
+group :development do 
+  gem 'pry'
+end
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
