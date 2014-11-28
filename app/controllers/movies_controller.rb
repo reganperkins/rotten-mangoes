@@ -1,6 +1,12 @@
 class MoviesController < ApplicationController
   def index
-    @movies = Movie.all
+    if params[:title].present?
+      @movies = Movie.includes_title(params[:title])
+    elsif params[:title].present?
+      @movies = Movie.includes_director(params[:director])
+    else
+      @movies = Movie.all
+    end
   end
 
   def show
@@ -35,11 +41,24 @@ class MoviesController < ApplicationController
     end
   end
 
+
   def destroy
     @movie = Movie.find(params[:id])
     @movie.destroy
     redirect_to movies_path
   end
+
+  # def query_title
+    
+  # end
+
+  # def query_director
+  #   User.where("name like ?", "%#{params[:query]}%").to_sql
+  # end
+
+  # def query_length
+  #   User.where("name like ?", "%#{params[:query]}%").to_sql
+  # end
 
   protected
 

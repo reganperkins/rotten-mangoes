@@ -1,0 +1,12 @@
+<%= form_tag("/", method: "get") do %>
+  <%= label_tag(:title, "Search for movie title:") %>
+  <%= text_field_tag :title, params[:title] %>
+
+  <%= label_tag(:director, "Search by director:") %>
+  <%= text_field_tag(:director) %>
+
+  <%= label_tag(:duration, "Search by movie length:") %>
+  <%= text_field_tag(:duration) %>
+
+  <%= submit_tag("Search") %>
+<% end %>

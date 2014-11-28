@@ -7,6 +7,9 @@ class Movie < ActiveRecord::Base
   validates :runtime_in_minutes, numericality: { only_integer: true }
   validate :release_date_is_in_the_future
 
+  scope :includes_title, -> (title) { where("title like ?", title) }
+  scope :includes_director, -> (director) { where("director like ?", director) }
+
   def review_average
     if reviews.size > 0
       return reviews.sum(:rating_out_of_ten)/reviews.size * 1.0
