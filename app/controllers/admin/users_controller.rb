@@ -31,6 +31,12 @@ class Admin::UsersController < ApplicationController
     end
   end
 
+  def change_user
+    session[:user_id] = params[:id]
+    redirect_to movies_path
+  end
+
+  # for admin to create a new user
   # def create
   #   @user = User.new
   #   if user.save
@@ -40,6 +46,8 @@ class Admin::UsersController < ApplicationController
   # end
 
   # protected
+
+  # 
 
   # def user_params
   #   params.require(:user).permit(:email, :firstname, :lastname, :admin)

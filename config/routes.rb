@@ -10,16 +10,11 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
+
+  get '/admin/change_users/:id', to: 'admin/users#change_user'
   
   root to: 'movies#index'
 
-  # get 'movies/index'
-
-  # get 'movies/show'
-
-  # get 'movies/new'
-
-  # get 'movies/edit'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
