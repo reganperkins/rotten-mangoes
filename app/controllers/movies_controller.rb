@@ -2,7 +2,7 @@ class MoviesController < ApplicationController
   def index
     if params[:title].present?
       @movies = Movie.includes_title(params[:title])
-    elsif params[:title].present?
+    elsif params[:director].present?
       @movies = Movie.includes_director(params[:director])
     else
       @movies = Movie.all

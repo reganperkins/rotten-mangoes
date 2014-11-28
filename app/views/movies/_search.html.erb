@@ -3,10 +3,12 @@
   <%= text_field_tag :title, params[:title] %>
 
   <%= label_tag(:director, "Search by director:") %>
-  <%= text_field_tag(:director) %>
+  <%= text_field_tag :director, params[:director] %>
 
-  <%= label_tag(:duration, "Search by movie length:") %>
+ <!--  <%= label_tag(:duration, "Search by movie length:") %>
   <%= text_field_tag(:duration) %>
+ -->
+  
 
   <%= submit_tag("Search") %>
 <% end %>
