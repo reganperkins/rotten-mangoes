@@ -1,4 +1,5 @@
 class MoviesController < ApplicationController
+
   def index
     if params[:title].present?
       @movies = Movie.includes_title(params[:title])
