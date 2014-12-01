@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+    @current_page = 'login'
     user = User.find_by(email: params[:email])
 
     if user && user.authenticate(params[:password])
@@ -18,6 +19,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
+    session[:admin_id] = nil
     redirect_to movies_path, notice: "Adios!"
   end
 

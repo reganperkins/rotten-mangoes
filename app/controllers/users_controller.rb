@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    @current_page = 'login'
     @user = User.new(user_params)
 
     if @user.save

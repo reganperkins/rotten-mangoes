@@ -1,15 +1,15 @@
-<%= form_tag("/", method: "get") do %>
-  <%= label_tag :title, "Search for movie title:" %>
-  <%= text_field_tag :title %>
+<div id="search">
+  <%= form_tag("/", method: "get", id: "search_form") do %>
+    <%= label_tag :title, "Search for movie title:" %>
+    <%= text_field_tag :title %>
 
-  <%= label_tag :director, "Search by director:" %>
-  <%= text_field_tag :director %>
-
-
-  <%= label_tag(:duration, "Search by movie length:") %>
-  <%= select_tag( :duration, options_for_select([ ['' , ], ['Under 90 minutes', 1], ['Between 90 and 120 minutes', 2], ["Over 120 minutes", 3] ])) %>
- 
+    <%= label_tag :director, "Search by director:" %>
+    <%= text_field_tag :director %>
 
 
-  <%= submit_tag("Search") %>
-<% end %>
+    <%= label_tag(:duration, "Search by movie length:") %>
+    <%= select_tag( :duration, options_for_select([ ['' , ], ['Under 90 minutes', 1], ['Between 90 and 120 minutes', 2], ["Over 120 minutes", 3] ])) %>
+
+    <%= submit_tag("Search") %>
+  <% end %>
+</div>

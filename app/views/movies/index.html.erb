@@ -2,21 +2,27 @@
 <%= link_to "Submit a movie!", new_movie_path %>
 <hr>
 <%= render 'search' %>
-<hr>
-<% @movies.each do |movie| %>
+<div id="movies">
 
-  <%= link_to image_tag(movie.poster_image_url), movie_path(movie) %>
+  <% @movies.each do |movie| %>
+    
+    <div class="poster">
+      <%= image_tag movie.poster.thumb.url() %>
+    </div>
 
-  <h2><%= link_to movie.title, movie_path(movie) %></h2>
+    <div class="review">
+      <%= link_to image_tag(movie.poster_image_url), movie_path(movie) %>
 
-  <h3><%= movie.release_date %></h3>
+      <h2><%= link_to movie.title, movie_path(movie) %></h2>
 
-  <h4>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>
+      <h3><%= movie.release_date %></h3>
 
-  <p><%= movie.description %></p>
+      <h4>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>
 
-  <hr>
+      <p><%= movie.description %></p>
+    </div>
+    <hr>
 
+  <% end %>
 
-
-<% end %>
+</div>
