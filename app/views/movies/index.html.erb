@@ -1,28 +1,34 @@
+<% content_for :body_class, "default" %>
+
 <h1>Rotten Mangoes</h1>
 <%= link_to "Submit a movie!", new_movie_path %>
 <hr>
 <%= render 'search' %>
 <div id="movies">
 
+<div class="fade-white">
   <% @movies.each do |movie| %>
     
-    <div class="poster">
-      <%= image_tag movie.poster.thumb.url() %>
-    </div>
 
-    <div class="review">
-      <%= link_to image_tag(movie.poster_image_url), movie_path(movie) %>
+      <div class="poster">
+        <%= image_tag movie.poster.thumb.url() %>
+      </div>
 
-      <h2><%= link_to movie.title, movie_path(movie) %></h2>
+      <div class="review">
+        <%= link_to image_tag(movie.poster_image_url), movie_path(movie) %>
 
-      <h3><%= movie.release_date %></h3>
+        <h2><%= link_to movie.title, movie_path(movie) %></h2>
 
-      <h4>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>
+        <h3><%= movie.release_date %></h3>
 
-      <p><%= movie.description %></p>
-    </div>
+        <h4>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>
+
+        <p><%= movie.description %></p>
+      </div>
+      
     <hr>
-
   <% end %>
+
+</div>
 
 </div>

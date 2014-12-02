@@ -12,28 +12,29 @@
 <% end %>
  
 <%= form_for @movie, html: {multipart: true} do |f| %>
+<h1>Add a movie</h1>
   <div>
-    <%= f.label "title" %><br>
+    <%= f.label "title" %>
     <%= f.text_field "title" %>
   </div>
   <div>
-    <%= f.label "release_date" %><br>
+    <%= f.label "release_date" %>
     <%= f.date_field "release_date" %>
   </div>
   <div>
-    <%= f.label "director" %><br>
+    <%= f.label "director" %>
     <%= f.text_field "director" %>
   </div>
   <div>
-    <%= f.label "runtime_in_minutes" %><br>
+    <%= f.label "runtime_in_minutes" %>
     <%= f.number_field "runtime_in_minutes" %>
   </div>
   <div>
-    <%= f.label "poster_image" %><br>
+    <%= f.label "poster_image" %>
     <%= f.file_field "poster" %>
   </div>
   <div>
-    <%= f.label "description" %><br>
+    <%= f.label "description" %>
     <%= f.text_area "description" %>
   </div>
   <div>

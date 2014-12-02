@@ -10,8 +10,8 @@
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
-
-  <body class="<%= @current_page %>">
+  
+  <body class="<%= yield (:body_class) %>">
 
     <%= yield %>
     <%= javascript_include_tag "application" %>

@@ -17,7 +17,11 @@
  */
 
 .default {
-  background-color: #fff;
+  /*background-color: #fff;*/
+  background-image: url("cinama-city.jpg");
+  /*background-repeat: no-repeat;
+  background-size: cover;*/
+  background-attachment:fixed;
 }
 
 .login {
@@ -26,7 +30,13 @@
   background-size: cover;
 }
 
+.login footer {
+  position: fixed;
+}
+
 footer {
+  padding-top: 20px;
+  padding-left: 30px;
   background-color: rgba(0,0,0,0.5);
   position: relative;
   bottom:0;
@@ -43,5 +53,9 @@ footer a {
 footer small {
   font-size: 1em;
   color: #fff;
+}
+
+a {
+  color: #008B7A;
 }
 
