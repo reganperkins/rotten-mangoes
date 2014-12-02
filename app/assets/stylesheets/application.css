@@ -18,10 +18,12 @@
 
 .default {
   /*background-color: #fff;*/
-  background-image: url("cinama-city.jpg");
-  /*background-repeat: no-repeat;
-  background-size: cover;*/
-  background-attachment:fixed;
+  background-image: url("mars.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  /*background-size: 100%;*/
+  background-attachment: fixed;
 }
 
 .login {

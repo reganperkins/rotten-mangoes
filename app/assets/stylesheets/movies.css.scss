@@ -1,10 +1,48 @@
 // Place all the styles related to the movies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.default h1 {
+  color: #201B15;
+  padding-left: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.default a {
+  color: #201B15;
+
+}
+
+.default footer a {
+  color: #fff;
+}
 
 h2 {
   font-size: 2.3em;
   text-transform: uppercase;
+}
+
+#search label {
+  color: #201B15;
+}
+
+#search input[type="submit"] {
+  background-color: #201B15;
+}
+#search input[type="submit"]:hover {
+  background-color: #000;
+}
+
+#search input[type="text"] {
+  border: 2px solid #201B15;
+  border-radius: 5px;
+  background-color: rgba(255,255,255,0.8);
+}
+
+#search input[type="dropdown"] {
+  border: 2px solid #201B15;
+  border-radius: 5px;
+  background-color: rgba(255,255,255,0.5);
 }
 
 .fade-white {
@@ -21,6 +59,7 @@ h2 {
   margin: 0 auto;
   padding-bottom: 50px;
 }
+
 /* search */
 #search {
   float: left;
